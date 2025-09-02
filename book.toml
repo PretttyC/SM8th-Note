@@ -1,0 +1,17 @@
+[book]
+title = "计算机网络：自顶向下方法（第8版）- 笔记"
+authors = ["PrettyC"]
+description = "计算机网络：自顶向下方法（第8版）读书笔记"
+language = "en"
+src = "src"
+
+[build]
+build-dir = "book"
+create-missing = true
+use-default-preprocessors = true
+
+[preprocessor.plantuml]
+plantuml-cmd = "plantuml"
+clickable-img = true
+use-data-uris = true
+piped = true
