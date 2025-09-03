@@ -1,0 +1,11 @@
+<style>
+mindmapDiagram {
+    BackGroundColor #19191C
+    node {
+        BackgroundColor #00000000
+    }
+    LineColor #D2D2D2
+    LineThickness 1.5
+    fontColor #DEDEDE
+}
+</style>

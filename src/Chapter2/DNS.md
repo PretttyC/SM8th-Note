@@ -2,6 +2,7 @@
 
 ```plantuml
 @startmindmap
+!include ../resources/mindmap_style.puml
 * 因特网主机的标识方法
 ** 主机名(hostname)/域名
 *** 域名的命名
@@ -31,6 +32,7 @@ DNS通常由其他应用层协议使用，如HTTP、SMTP。
 
 ```plantuml
 @startmindmap
+!include ../resources/mindmap_style.puml
 * DNS的功能
 ** 提供主机名到IP转换的目录服务
 ** 主机别名(host aliasing)
@@ -59,10 +61,11 @@ DNS的BIND（Berkeley Internet Name Domain）是一款开源的域名系统（DN
 #### - DNS服务器 {id="DNS_server"}
 DNS由大量的分层的、分布在全世界的DNS服务器组成。  
 
-![DNS_level.png](../images/DNS_level.png)
+![DNS_level.png](../resources/images/DNS_level.png)
 
 ```plantuml
 @startmindmap
+!include ../resources/mindmap_style.puml
 * 分层次的DNS服务器
 ** 根DNS服务器
 ***:\
@@ -91,13 +94,14 @@ ISP一般都有对应的本地DNS服务器，如学校ISP、机构ISP等。
 
 [13个根服务器](https://www.iana.org/domains/root/servers)：  
 
-![DNS_rootserver.png](../images/DNS_rootserver.png)
+![DNS_rootserver.png](../resources/images/DNS_rootserver.png)
 
 
 #### - DNS查询过程 {id="DNS_query"}
 
 ```plantuml
 @startmindmap
+!include ../resources/mindmap_style.puml
 * DNS查询
 ** 递归查询(以主机自己的名义查询)
 ** 迭代查询(直接返回给本地DNS服务器) 
@@ -107,11 +111,11 @@ ISP一般都有对应的本地DNS服务器，如学校ISP、机构ISP等。
 理论上DNS查询可以是递归也可以是迭代，现实中，往往采用第一张图中的混用模式。  
 
 ①是递归查询,②④⑥时迭代查询：
-![DNS_query1.png](../images/DNS_query1.png) {width="375" style="inline"}
+<img src="../resources/images/DNS_query1.png" width="375" />
 
 
 全部是递归查询：
-![DNS_query2.png](../images/DNS_query2.png) {width="375" style="inline"}
+<img src="../resources/images/DNS_query2.png" width="375" />
 
 #### - DNS缓存 {id="DNS_cache"}
 
@@ -174,6 +178,7 @@ Name和Value的意义取决于Type，TTL表示该记录的生存时间。
 
 ```plantuml
 @startmindmap
+!include ../resources/mindmap_style.puml
 * DNS资源记录类型
 ** Type == A
 ***_ Name是主机名，Value是IPv4地址，如：(relay.bar.foo.com, 145.37.93.126, A)
@@ -201,10 +206,11 @@ DNS客户端若想获得邮件服务器的规范主机名，则发送MX记录；
 DNS报文有两种：查询报文和回答报文。  
 两种报文有着相同的格式。  
 
-![DNS_message_format.png](../images/DNS_message_format.png)
+![DNS_message_format.png](../resources/images/DNS_message_format.png)
 
 ```plantuml
 @startmindmap
+!include ../resources/mindmap_style.puml
 * DNS报文
 ** 头部(Header)-12字节
 *** 标识符(Transaction ID)-16bit
@@ -272,6 +278,7 @@ DNS报文有两种：查询报文和回答报文。
 
 ```plantuml
 @startmindmap
+!include ../resources/mindmap_style.puml
 * 攻击DNS
 ** 对DNS服务器进行DDos攻击
 ** 中间人攻击

@@ -33,7 +33,7 @@ $\frac{NF}{u_s+u_1+...+u_N} = \frac{F}{\frac{u_s}{N} + \frac{u_1+...u_n}{N}} = \
 
 **C/S和P2P比较**  
 
-![CSP2P.png](../images/CSP2P.png) {width="500"}
+<p><img src="../resources/images/CSP2P.png" width="500" /></p>
 
 对于任意数量的对等方，分发时间总是小于$\frac{F}{\bar{u}}$，因此P2P体系结构具有自扩展性。这种自扩展性的直接原因是：对等方即是消费者又是分发者。
 
@@ -87,6 +87,7 @@ P2P对等方之间组成的网络是覆盖网络。
 
 ```plantuml
 @startmindmap
+!include ../resources/mindmap_style.puml
 * P2P覆盖网
 ** 非结构化P2P
 *** 特点

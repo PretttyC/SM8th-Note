@@ -6,6 +6,7 @@ HTTP有两部分组成：HTTP客户端和HTTP服务端。
 
 ```plantuml
 @startmindmap
+!include ../resources/mindmap_style.puml
 * 术语
 
 ** Web页面(Web page)或Web文档
@@ -58,7 +59,7 @@ URI（Uniform Resource Identifier，统一资源标识符）是一个总称，�
 
 URI组成：
 
-![URI组成.png](../images/URI组成.png)
+![URI组成.png](../resources/images/URI组成.png)
 
 authority由3部分组成：  
 * User info：可选，可能包含用户名和密码（可选），由冒号 (:) 分隔，后跟 @ 符号。
@@ -77,18 +78,18 @@ URI包含两种具体形式：URL(Uniform Resource Locator, 统一资源定位�
 * URL和URN互补：URL解决“怎么找到资源”，URN解决“怎么唯一标识资源”。
 * 实际使用：日常说的“网址”通常是URL，但像磁力链接（如 magnet:?xt=urn:btih:...）则是URN的一种应用。
 
-![URI_URL_URN.png](../images/URI_URL_URN.png)
+![URI_URL_URN.png](../resources/images/URI_URL_URN.png)
 
 ### URL
 URL（Uniform Resource Locator，统一资源定位符）是URI的子集，相当于“资源的地址”。它告诉你去哪里能找到这个资源，比如一个具体的网址。  
 
 URL标准格式：  
 
-![URL组成.png](../images/URL组成.png)
+![URL组成.png](../resources/images/URL组成.png)
 
 URL完整格式：  
 
-![URL完整组成.png](../images/URL完整组成.png)
+![URL完整组成.png](../resources/images/URL完整组成.png)
 
 * scheme：通信协议，包括HTTP、HTTPS、FTP、MAILTO、IRC、FILE等。
 * authority包含两部分：  
@@ -109,7 +110,7 @@ URN（Uniform Resource Name，统一资源名称）也是URI的子集，相当�
 
 URN组成：  
 
-![URN组成.png](../images/URN组成.png)
+![URN组成.png](../resources/images/URN组成.png)
 
 * scheme：方案规范（**urn:**）不区分大小写。
 * NID：名称空间标识符，可以包括字母、数字和连字符 (-)，后跟冒号 (:)。
@@ -136,6 +137,7 @@ HTTP协议的无状态性是指协议本身不具备记忆能力，
 
 ```plantuml
 @startmindmap
+!include ../resources/mindmap_style.puml
 * 无状态协议(stateless protocol)
 ** 请求独立性
 ***_ 每次HTTP请求都是全新的交互
@@ -147,6 +149,7 @@ HTTP协议的无状态性是指协议本身不具备记忆能力，
 
 ```plantuml
 @startmindmap
+!include ../resources/mindmap_style.puml
 * HTTP连接的持续性
 ** 非持续连接
 ***_:\
@@ -196,14 +199,15 @@ HTTP报文除实体主体(entity body)外由多行组成，每行由一个回车
 
 HTTP请求报文例子：
 
-![HTTP请求报文例子.png](../images/HTTP请求报文例子.png)
+![HTTP请求报文例子.png](../resources/images/HTTP请求报文例子.png)
 
 HTTP请求报文的通用格式：
 
-![HTTP请求报文的通用格式.png](../images/HTTP请求报文的通用格式.png) {width="500"}
+<p><img src="../resources/images/HTTP请求报文的通用格式.png" width="500" /></p>
 
 ```plantuml
 @startmindmap
+!include ../resources/mindmap_style.puml
 * HTTP请求报文
 ** 请求行
 ***_ 请求行由3部分组成
@@ -247,14 +251,15 @@ HTTP请求报文的通用格式：
 
 HTTP响应报文例子：
 
-![HTTP响应报文例子.png](../images/HTTP响应报文例子.png)
+![HTTP响应报文例子.png](../resources/images/HTTP响应报文例子.png)
 
 HTTP响应报文的通用格式：
 
-![HTTP响应报文的通用格式.png](../images/HTTP响应报文的通用格式.png) {width="500"}
+<p><img src="../resources/images/HTTP响应报文的通用格式.png" width="500" /></p>
 
 ```plantuml
 @startmindmap
+!include ../resources/mindmap_style.puml
 * HTTP响应报文
 ** 状态行
 ***_ 状态行由3部分组成
@@ -367,6 +372,7 @@ HTTP/1.1非流水线情况下，n个对象共需花费：RTT + n * (RTT + L/R)
  
 ```plantuml
 @startmindmap
+!include ../resources/mindmap_style.puml
 * HOL阻塞问题
 ** 后面的小对象要等待前面的大对象传输完毕才能够开始传输，用户体验差
 ** 丢失恢复(丢失重传)时实际上暂停了对象的传输：增加了延时
@@ -377,6 +383,7 @@ HTTP/1.1解决HOL阻塞问题的典型方法：**使用多个并行的TCP连接�
 
 ```plantuml
 @startmindmap
+!include ../resources/mindmap_style.puml
 * 使用多个并行TCP连接导致的问题
 ** 多个并行TCP连接增加了服务器的负担
 **:\
@@ -390,6 +397,7 @@ TCP的拥塞控制针对同一条瓶颈链路上的所有TCP连接，给出一�
 ### HTTP/2的改进：HTTP/2的设计目标是减少总延时
 ```plantuml
 @startmindmap
+!include ../resources/mindmap_style.puml
 * HTTP/2
 ** 分帧：对单一的TCP连接上的请求和响应进行多路复用
 ***_:\
@@ -442,24 +450,23 @@ QUIC协议在应用层实现，它基于UDP协议。
 将部分TCP特性上移到QUIC上， 如TCP的可靠性：流量控制、拥塞控制。  
 基于UDP重新高效实现、避免TCP序号二义性  
 
-![HTTP3组成.png](../images/HTTP3组成.png) {width="350" style="inline"}
-
-![HTTP3组成_形成.png](../images/HTTP3组成_形成.png) {width="350" style="inline"}
+<img src="../resources/images/HTTP3组成.png" width="350" />
+<img src="../resources/images/HTTP3组成_形成.png" width="350" />
 
 * **HTTP/3协议栈**
 
 QUIC在应用层实现
 
-![HTTP3协议栈.png](../images/HTTP3协议栈.png) {width="400"}
-
-![QUIC协议.png](../images/QUIC协议.png) {width="400"}
+<img src="../resources/images/HTTP3协议栈.png" width="350" />
+<img src="../resources/images/QUIC协议.png" width="350" />
 
 * **HTTP演化**
 
-![HTTP演化.png](../images/HTTP演化.png) {width="700"}
+<p><img src="../resources/images/HTTP演化.png" width="700" /></p>
 
 ```plantuml
 @startmindmap
+!include ../resources/mindmap_style.puml
 * QUIC协议
 @endmindmap
 ```
