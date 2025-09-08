@@ -1,6 +1,6 @@
 # Summary
 
-[关于](./README.md)
+[关于](About.md)
 
 # 计算机网络和因特网
 
