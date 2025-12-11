@@ -19,19 +19,3 @@ piped = true
 
 [preprocessor.katex]
 after = ["links"]
-
-[preprocessor.repl]
-# iframe url, default is https://mr-addict.github.io/mdbook-repl/embed/
-src = "https://mr-addict.github.io/mdbook-repl/embed/"
-
-# python is disabled by default and loading is lazy
-python.enable = true
-python.loading = "lazy"
-
-# typescript is disabled by default and loading is lazy
-typescript.enable = true
-typescript.loading = "lazy"
-
-# javascript is disabled by default and loading is lazy
-javascript.enable = true
-javascript.loading = "lazy"
